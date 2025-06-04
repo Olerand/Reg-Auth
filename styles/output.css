@@ -19,6 +19,8 @@
     --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
+    --default-transition-duration: 150ms;
+    --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -169,47 +171,17 @@
   }
 }
 @layer utilities {
-  .absolute {
-    position: absolute;
-  }
   .relative {
     position: relative;
-  }
-  .top-\[50px\] {
-    top: 50px;
-  }
-  .bottom-\[50px\] {
-    bottom: 50px;
-  }
-  .bottom-\[60px\] {
-    bottom: 60px;
   }
   .bottom-\[63px\] {
     bottom: 63px;
   }
-  .bottom-\[65px\] {
-    bottom: 65px;
-  }
-  .bottom-\[70px\] {
-    bottom: 70px;
-  }
-  .bottom-\[75px\] {
-    bottom: 75px;
-  }
-  .bottom-\[100px\] {
-    bottom: 100px;
-  }
   .left-\[60\%\] {
     left: 60%;
   }
-  .left-\[400px\] {
-    left: 400px;
-  }
   .mr-\[1\%\] {
     margin-right: 1%;
-  }
-  .mr-\[1\] {
-    margin-right: 1;
   }
   .mr-auto {
     margin-right: auto;
@@ -223,11 +195,23 @@
   .mb-\[60px\] {
     margin-bottom: 60px;
   }
+  .mb-\[100px\] {
+    margin-bottom: 100px;
+  }
   .mb-\[104px\] {
     margin-bottom: 104px;
   }
+  .mb-\[182px\] {
+    margin-bottom: 182px;
+  }
+  .mb-auto {
+    margin-bottom: auto;
+  }
   .flex {
     display: flex;
+  }
+  .hidden {
+    display: none;
   }
   .table {
     display: table;
@@ -237,6 +221,9 @@
   }
   .h-\[25px\] {
     height: 25px;
+  }
+  .h-\[49px\] {
+    height: 49px;
   }
   .h-\[63px\] {
     height: 63px;
@@ -256,20 +243,14 @@
   .w-\[25px\] {
     width: 25px;
   }
-  .w-\[32\.3\%\] {
-    width: 32.3%;
-  }
-  .w-\[32\.3\] {
-    width: 32.3;
+  .w-\[49px\] {
+    width: 49px;
   }
   .w-\[50vw\] {
     width: 50vw;
   }
   .w-\[64\.6\%\] {
     width: 64.6%;
-  }
-  .w-\[64\.6\] {
-    width: 64.6;
   }
   .w-\[100\%\] {
     width: 100%;
@@ -303,37 +284,9 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
-  .border-\[2px\] {
-    border-style: var(--tw-border-style);
-    border-width: 2px;
-  }
-  .border-\[5px\] {
-    border-style: var(--tw-border-style);
-    border-width: 5px;
-  }
-  .border-t {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 1px;
-  }
-  .border-t-\[2px\] {
-    border-top-style: var(--tw-border-style);
-    border-top-width: 2px;
-  }
-  .border-r {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 1px;
-  }
-  .border-r-0 {
-    border-right-style: var(--tw-border-style);
-    border-right-width: 0px;
-  }
   .border-b-\[2px\] {
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
-  }
-  .border-l {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 1px;
   }
   .border-l-\[5px\] {
     border-left-style: var(--tw-border-style);
@@ -342,29 +295,8 @@
   .border-\[\#F38049\] {
     border-color: #F38049;
   }
-  .border-\[\#\] {
-    border-color: #;
-  }
-  .border-amber-600 {
-    border-color: var(--color-amber-600);
-  }
-  .border-gray-400 {
-    border-color: var(--color-gray-400);
-  }
-  .border-t-\[\#F38049\] {
-    border-top-color: #F38049;
-  }
   .border-b-\[\#F38049\] {
     border-bottom-color: #F38049;
-  }
-  .border-b-\[\#\] {
-    border-bottom-color: #;
-  }
-  .border-b-amber-600 {
-    border-bottom-color: var(--color-amber-600);
-  }
-  .border-l-\[\#F38049\] {
-    border-left-color: #F38049;
   }
   .bg-\[\#4D5259\] {
     background-color: #4D5259;
@@ -374,12 +306,6 @@
   }
   .bg-\[\#F38049\] {
     background-color: #F38049;
-  }
-  .bg-\[\#\] {
-    background-color: #;
-  }
-  .bg-gray-500 {
-    background-color: var(--color-gray-500);
   }
   .pt-\[79px\] {
     padding-top: 79px;
@@ -399,14 +325,14 @@
   .text-\[24px\] {
     font-size: 24px;
   }
+  .text-\[33\.75px\] {
+    font-size: 33.75px;
+  }
   .text-\[44px\] {
     font-size: 44px;
   }
   .text-\[\#FFFFFF\] {
     color: #FFFFFF;
-  }
-  .text-\[\#\] {
-    color: #;
   }
   .text-black {
     color: var(--color-black);
@@ -421,30 +347,85 @@
     outline-style: var(--tw-outline-style);
     outline-width: 1px;
   }
-  .checked\:border-blue-500 {
-    &:checked {
-      border-color: var(--color-blue-500);
-    }
+  .transition-colors {
+    transition-property: color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to;
+    transition-timing-function: var(--tw-ease, var(--default-transition-timing-function));
+    transition-duration: var(--tw-duration, var(--default-transition-duration));
+  }
+  .duration-300 {
+    --tw-duration: 300ms;
+    transition-duration: 300ms;
   }
   .checked\:bg-\[\#F38049\] {
     &:checked {
       background-color: #F38049;
     }
   }
-  .checked\:bg-\[\#\] {
-    &:checked {
-      background-color: #;
+  .hover\:bg-\[\#4D5259\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #4D5259;
+      }
     }
   }
-  .checked\:bg-blue-500 {
-    &:checked {
-      background-color: var(--color-blue-500);
+  .hover\:text-white {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-white);
+      }
+    }
+  }
+  .focus\:border-l-\[5px\] {
+    &:focus {
+      border-left-style: var(--tw-border-style);
+      border-left-width: 5px;
+    }
+  }
+  .focus\:border-\[\#F38049\] {
+    &:focus {
+      border-color: #F38049;
+    }
+  }
+  .focus\:bg-\[\#4D5259\] {
+    &:focus {
+      background-color: #4D5259;
+    }
+  }
+  .focus\:bg-\[\#FFFFFF\] {
+    &:focus {
+      background-color: #FFFFFF;
+    }
+  }
+  .focus\:bg-\[\#FFFFF\] {
+    &:focus {
+      background-color: #FFFFF;
+    }
+  }
+  .focus\:text-white {
+    &:focus {
+      color: var(--color-white);
     }
   }
   .focus\:outline-none {
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
+    }
+  }
+  .active\:h-\[100px\] {
+    &:active {
+      height: 100px;
+    }
+  }
+  .active\:border-l-\[5px\] {
+    &:active {
+      border-left-style: var(--tw-border-style);
+      border-left-width: 5px;
+    }
+  }
+  .active\:border-\[\#F38049\] {
+    &:active {
+      border-color: #F38049;
     }
   }
 }
@@ -458,11 +439,16 @@
   inherits: false;
   initial-value: solid;
 }
+@property --tw-duration {
+  syntax: "*";
+  inherits: false;
+}
 @layer properties {
   @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
     *, ::before, ::after, ::backdrop {
       --tw-border-style: solid;
       --tw-outline-style: solid;
+      --tw-duration: initial;
     }
   }
 }

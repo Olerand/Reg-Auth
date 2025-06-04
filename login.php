@@ -10,24 +10,39 @@
     <main class="flex flex-col w-[50vw] h-[100vh] pl-[120px] pt-[79px]">
         <nav class="mb-[104px]">
             <ul class="flex flex-row text-white text-[24px] gap-[53px] font-[Raleway]">
-                <li class="flex border-b-[2px] border-b-[#F38049]">Login</li>
-                <li class="">Registration</li>
+                <li id="loginTab" class="border-b-[2px] border-b-[#F38049]">Login</li>
+                <li id="regTab" class="">Registration</li>
             </ul>
         </nav>
         <section class="flex flex-col text-white mb-[50px]">
             <h1 class="text-[44px]">Good Morning!</h1>
             <h4 class="text-[16px]">Thank you for coming back!</h4>
         </section>
-        <form class="flex flex-col text-[#FFFFFF]" action="">
-            <input class="w-[64.6%] h-[81px] bg-[#4D5259] mb-[10px]  border-[#F38049] border-l-[5px]  focus:outline-none text-[16px]" type="text" placeholder="Your Email">
-            <input id="passwordInput" class="w-[64.6%] h-[81px] bg-[#4D5259] mb-[10px]  border-[#F38049] border-l-[5px]  focus:outline-none text-[16px]" type="password" placeholder="Your Password">
+        <form id="loginForm" class="flex flex-col text-[#FFFFFF]" action="">
+            <input class="w-[64.6%] h-[81px] bg-[#4D5259] mb-[10px] focus:border-l-[5px] focus:border-[#F38049]   focus:outline-none text-[16px]" type="text" placeholder="Your Email">
+            <input id="passwordInput" class="w-[64.6%] h-[81px] bg-[#4D5259] mb-[10px] focus:border-l-[5px] focus:border-[#F38049]   focus:outline-none text-[16px]" type="password" placeholder="Your Password">
             <button id="togglePassword" type="button" class="w-[25px] h-[25px] relative left-[60%] bottom-[63px]"><img class="w-[25px] h-[25px]" src="/src/images/password_eye.png" alt="pswrd"></button>
             <div class="flex flex-row w-[64.6%] mb-[60px] ">
                 <input class="appearance-none w-[16px] mr-[1%] h-[16px] border-[1px]  border-[#F38049] checked:bg-[#F38049]" type="checkbox">
                 <p class="text-[12px] text-[#FFFFFF] mr-auto">Remember me</p>
                 <p class="text-[12px] text-[#FFFFFF]">Forgot Password?</p>
             </div>
-            <button class="w-[64.6%] h-[63px] text-black bg-[#F38049] ">Login</button>
+            <button class="w-[64.6%] h-[63px] text-black bg-[#F38049] hover:bg-[#4D5259] hover:text-white transition-colors duration-300 mb-[100px]">Login</button>
+            <div class="flex flex-row">
+                <img class="w-[49px] h-[49px] " src="/src/images/diamond.png" alt="">
+                <h1 class="text-[33.75px] text-[#FFFFFF]">FutureFlux</h1>
+            </div>
+        </form>
+        <form id="regForm" class="flex flex-col text-[#FFFFFF] hidden" action="">
+            <input class="w-[64.6%] h-[81px] bg-[#4D5259] mb-[10px] focus:border-l-[5px] focus:border-[#F38049]   focus:outline-none text-[16px]" type="text" placeholder="Full Name">
+            <input class="w-[64.6%] h-[81px] bg-[#4D5259] mb-[10px] focus:border-l-[5px] focus:border-[#F38049]   focus:outline-none text-[16px]" type="text" placeholder="Your Email">
+            <input id="passwordInput" class="w-[64.6%] h-[81px] bg-[#4D5259] mb-[10px] focus:border-l-[5px] focus:border-[#F38049]   focus:outline-none text-[16px]" type="password" placeholder="Your Password">
+            <button id="togglePassword" type="button" class="w-[25px] h-[25px] relative left-[60%] bottom-[63px]"><img class="w-[25px] h-[25px]" src="/src/images/password_eye.png" alt="pswrd"></button>
+            <button class="w-[64.6%] h-[63px] text-black bg-[#F38049] hover:bg-[#4D5259] hover:text-white transition-colors duration-300 mb-[100px]">Register</button>
+            <div class="flex flex-row">
+                <img class="w-[49px] h-[49px] " src="/src/images/diamond.png" alt="">
+                <h1 class="text-[33.75px] text-[#FFFFFF]">FutureFlux</h1>
+            </div>
         </form>
     </main>
     <aside class="flex w-[50vw] h-[100vh]">
