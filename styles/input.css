@@ -1,0 +1,11 @@
+@font-face {
+  font-family: 'Raleway';
+  src: url('/src/fonts/Raleway-v4020-RegularItalic.otf') format('opentype');
+  font-weight: normal;
+  font-style: regular;
+}
+
+@import "tailwindcss";
+
+/* npx @tailwindcss/cli -i ./styles/input.css -o ./styles/output.css --watch
+ */
