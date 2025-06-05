@@ -1,5 +1,5 @@
 const passwordInput  =  document.getElementById("passwordInput");
-const toggleBtn = document.getElementById("togglePassword");
+
 
 const loginTab = document.getElementById("loginTab");
 const regTab = document.getElementById("regTab");
@@ -23,7 +23,11 @@ regTab.addEventListener("click", () => {
 });
 
 
-toggleBtn.addEventListener("click", () => {
-    const isPassword = passwordInput.type === "password";
-    passwordInput.type = isPassword ? "text" : "password";
-})
+document.querySelectorAll('.togglePassword').forEach(btn => {
+    btn.addEventListener('click', () => {
+        const input = btn.previousElementSibling; // находим input перед кнопкой
+        if (input && input.tagName === 'INPUT') {
+            input.type = input.type === 'password' ? 'text' : 'password';
+        }
+    });
+});
