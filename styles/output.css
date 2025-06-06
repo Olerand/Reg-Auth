@@ -13,10 +13,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-amber-600: oklch(66.6% 0.179 58.318);
-    --color-blue-500: oklch(62.3% 0.214 259.815);
-    --color-gray-400: oklch(70.7% 0.022 261.325);
-    --color-gray-500: oklch(55.1% 0.027 264.364);
     --color-black: #000;
     --color-white: #fff;
     --default-transition-duration: 150ms;
@@ -201,17 +197,8 @@
   .mb-\[104px\] {
     margin-bottom: 104px;
   }
-  .mb-\[182px\] {
-    margin-bottom: 182px;
-  }
-  .mb-auto {
-    margin-bottom: auto;
-  }
   .flex {
     display: flex;
-  }
-  .hidden {
-    display: none;
   }
   .table {
     display: table;
@@ -288,10 +275,6 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 2px;
   }
-  .border-l-\[5px\] {
-    border-left-style: var(--tw-border-style);
-    border-left-width: 5px;
-  }
   .border-\[\#F38049\] {
     border-color: #F38049;
   }
@@ -340,6 +323,9 @@
   .text-white {
     color: var(--color-white);
   }
+  .uppercase {
+    text-transform: uppercase;
+  }
   .underline {
     text-decoration-line: underline;
   }
@@ -386,46 +372,10 @@
       border-color: #F38049;
     }
   }
-  .focus\:bg-\[\#4D5259\] {
-    &:focus {
-      background-color: #4D5259;
-    }
-  }
-  .focus\:bg-\[\#FFFFFF\] {
-    &:focus {
-      background-color: #FFFFFF;
-    }
-  }
-  .focus\:bg-\[\#FFFFF\] {
-    &:focus {
-      background-color: #FFFFF;
-    }
-  }
-  .focus\:text-white {
-    &:focus {
-      color: var(--color-white);
-    }
-  }
   .focus\:outline-none {
     &:focus {
       --tw-outline-style: none;
       outline-style: none;
-    }
-  }
-  .active\:h-\[100px\] {
-    &:active {
-      height: 100px;
-    }
-  }
-  .active\:border-l-\[5px\] {
-    &:active {
-      border-left-style: var(--tw-border-style);
-      border-left-width: 5px;
-    }
-  }
-  .active\:border-\[\#F38049\] {
-    &:active {
-      border-color: #F38049;
     }
   }
 }
