@@ -15,7 +15,7 @@
     <main class="flex flex-col w-[50vw] h-[100vh] pl-[120px] pt-[79px]">
         <nav class="mb-[104px]">
             <ul class="flex flex-row text-white text-[24px] gap-[53px] font-[Raleway]">
-                <a href="log.php"><li onclick=""  class="">Login</li></a>
+                <a href="index.php"><li onclick=""  class="">Login</li></a>
                 <li  class="border-b-[2px] border-b-[#F38049]">Registration</li>
             </ul>
         </nav>
