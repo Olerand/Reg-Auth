@@ -1,25 +1,30 @@
 <?php
-    session_start();
-    require_once "connect.php";
-    function displayMessageToForm($string){
-        $_SESSION["auth"] = $string;
-        header('Location: /log.php');
-        exit();
-    }
-    $password = md5($_POST['password']);
-    $email = $_POST['email'];
-    try{
-        $result = $connect->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
-        $user = $result->fetch(PDO::FETCH_ASSOC);
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+session_start();
 
-        if ($user) {
-            displayMessageToForm("User is avaibled!");
-        } else {
-            displayMessageToForm("Пользователь не найден");
-            }
-    }
-    catch(PDOException $e){
-        echo "$e";
-    }
+require_once "connect.php";
 
-?>  
+function redirectWithMessage($message) {
+    $_SESSION["auth"] = $message;
+    header('Location: /index.php');
+    exit();
+}
+
+$email = $_POST['email'] ?? '';
+$password = $_POST['password'] ?? '';
+
+try {
+    $stmt = $connect->prepare("SELECT * FROM users WHERE email = :email");
+    $stmt->execute(['email' => $email]);
+    $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && md5($password, $user['password'])) {
+        redirectWithMessage("Авторизация успешна!");
+    } else {
+        redirectWithMessage("Неверный email или пароль");
+    }
+} catch (PDOException $e) {
+    die("Ошибка базы данных: " . $e->getMessage());
+}
+?>

@@ -1,5 +1,7 @@
 <?php
+    if (session_status() === PHP_SESSION_NONE) {
     session_start();
+}
     require_once "connect.php";
 
     $fullName = $_POST['full_name'];
